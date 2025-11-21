@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>vite.config.ts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #2aacb8; font-style: italic;}
+.s5 { color: #c77dbb; font-style: italic;}
+.s6 { color: #7a7e85;}
+.s7 { color: #56a8f5;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+vite.config.ts</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s2">{ defineConfig } </span><span class="s0">from </span><span class="s2">'</span><span class="s3">vite</span><span class="s2">'</span>
+<span class="s0">import type </span><span class="s2">{ UserConfig } </span><span class="s0">from </span><span class="s2">'</span><span class="s3">vite</span><span class="s2">'</span>
+<span class="s0">import </span><span class="s2">react </span><span class="s0">from </span><span class="s2">'</span><span class="s3">@vitejs/plugin-react</span><span class="s2">'</span>
+<span class="s0">import </span><span class="s2">tailwindcss </span><span class="s0">from </span><span class="s2">'</span><span class="s3">@tailwindcss/vite</span><span class="s2">'</span>
+
+<span class="s0">const </span><span class="s2">serverConfig: UserConfig</span><span class="s1">[</span><span class="s2">'</span><span class="s3">server</span><span class="s2">'</span><span class="s1">] </span><span class="s2">= {</span>
+  <span class="s1">port</span><span class="s2">: </span><span class="s4">5173</span><span class="s2">,</span>
+  <span class="s1">allowedHosts</span><span class="s2">: </span><span class="s5">true</span><span class="s2">,      // </span><span class="s6">DÜZELTME: 'true' yapılarak Cloudflare tüneline izin verildi</span>
+  <span class="s1">strictPort</span><span class="s2">: </span><span class="s5">true</span><span class="s2">,</span>
+  <span class="s1">hmr</span><span class="s2">: { </span><span class="s1">protocol</span><span class="s2">: '</span><span class="s3">ws</span><span class="s2">' }  // </span><span class="s6">Tünel üzerinden HMR (Canlı Yenileme) sorunsuz çalışır</span>
+<span class="s2">}</span>
+
+<span class="s0">export default </span><span class="s7">defineConfig</span><span class="s1">(</span><span class="s2">{</span>
+  <span class="s1">plugins</span><span class="s2">: </span><span class="s1">[</span><span class="s7">react</span><span class="s1">()</span><span class="s2">, </span><span class="s7">tailwindcss</span><span class="s1">()]</span><span class="s2">,</span>
+  <span class="s1">server</span><span class="s2">: serverConfig,</span>
+<span class="s2">}</span><span class="s1">)</span></pre>
+</body>
+</html>
